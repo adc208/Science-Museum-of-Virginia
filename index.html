@@ -4,16 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Science Museum of Virginia</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="science-website-css.css/styles.css">
 </head>
 
 <body>
 
 <!-- Header -->
 <header class="header">
-    <div class="logo">SMV</div>
-    <div class="menu">&#9776;</div>
+    <div class="logo">S<span>M</span>V</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
 </header>
+
+<!-- Navigation Bar -->
+<nav class="navbar" id="navbar">
+    <ul class="nav-list">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="smv-pages/about-us.html" class="nav-link">About Us</a></li>
+        <li><a href="smv-pages/visit.html" class="nav-link">Visit</a></li>
+        <li><a href="smv-pages/admission.html" class="nav-link">Admission</a></li>
+        <li><a href="smv-pages/events.html" class="nav-link">Events</a></li>
+    </ul>
+</nav>
 
 <!-- Hero Image -->
 <section class="hero">
@@ -62,3 +73,19 @@
 
 </body>
 </html>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    });
+</script>

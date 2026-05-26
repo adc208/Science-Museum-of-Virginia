@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Museum of Virginia</title>
+<link rel="stylesheet" href="../science-website-css.css/styles.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">S<span>M</span>V</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="navbar" id="navbar">
+    <ul class="nav-list">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="about-us.html" class="nav-link active">About Us</a></li>
+        <li><a href="visit.html" class="nav-link">Visit</a></li>
+        <li><a href="admission.html" class="nav-link">Admission</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Image -->
+<!-- Hero Image -->
+<section class="hero">
+    <img src="../images/smv-banner.jpg" alt="Museum Exterior">
+</section>
+
+<!-- About Header -->
+<section class="welcome">
+    <h1>About Us!</h1>
+</section>
+
+<!-- About Content -->
+<section class="about-grid">
+    <div class="about-card">
+        <img src="../images/smv-index-img1.jpg" alt="Exhibit">
+    </div>
+
+    <div class="about-card">
+        <h2>Our Mission</h2>
+        <p>
+        Our mission is to spark curiosity and create a deeper understanding of the world and the universe beyond it. We are here to connect people of all ages with the love of science.
+        </p>
+    </div>
+
+    <div class="about-card">
+        <h2>Meet Our Team</h2>
+        <p>
+        Behind each of our exhibitions is our great team of educators, designers, and researchers who work together to create engaging experiences.
+        </p>
+    </div>
+
+    <div class="about-card">
+        <img src="../images/smv-index-img2.jpg" alt="Team">
+    </div>
+</section>
+
+<!-- Contact Card -->
+<section class="content contact-card">
+    <h2 class="contact-title">Contact Us!</h2>
+    <form class="contact-form">
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="message" rows="6" placeholder="Message"></textarea>
+        <div class="form-actions">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</section>
+
+<!-- Policies -->
+<section class="policies">
+    <h3>Policies</h3>
+    <p>
+    To keep our museum safe for all visitors, we ask that guests follow the museum guidelines at all times. Outside food and drinks are not allowed; please be respectful to employees and other guests.
+    </p>
+</section>
+
+</body>
+</html>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    });
+</script>
