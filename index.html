@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Museum of Virginia</title>
+<link rel="stylesheet" href="science-website-css.css/styles.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">S<span>M</span>V</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="navbar" id="navbar">
+    <ul class="nav-list">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="smv-pages/about-us.html" class="nav-link">About Us</a></li>
+        <li><a href="smv-pages/visit.html" class="nav-link">Visit</a></li>
+        <li><a href="smv-pages/admission.html" class="nav-link">Admission</a></li>
+        <li><a href="smv-pages/events.html" class="nav-link">Events</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Image -->
+<section class="hero">
+    <img src="images/index-banner.jpg" alt="Museum Interior">
+</section>
+
+<!-- Welcome Title -->
+<section class="welcome">
+    <h1>Welcome to the Science Museum of Virginia!</h1>
+</section>
+
+<!-- Exhibits Section -->
+<section class="content">
+    <img src="images/smv-index-img1.jpg" alt="Space Exhibit">
+
+    <div class="text">
+        <h2>Museum Exhibits</h2>
+        <p>
+        Explore science with our current and upcoming Exhibits!
+        Every few weeks there will be a new exhibit for guests to explore and learn!
+        </p>
+
+        <button>Exhibits</button>
+    </div>
+</section>
+
+<!-- Visit Section -->
+<section class="content reverse">
+
+    <div class="text">
+        <h2>Plan a Visit Today!</h2>
+        <p>
+        Purchase your tickets beforehand right here!
+        </p>
+
+        <p>
+        Tickets for children 5yr and below are only $2!
+        </p>
+
+        <button>Tickets</button>
+    </div>
+
+    <img src="images/smv-index-img2.jpg" alt="Museum Globe">
+
+</section>
+
+</body>
+</html>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    });
+</script>

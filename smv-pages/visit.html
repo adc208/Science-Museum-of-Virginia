@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Museum of Virginia</title>
+<link rel="stylesheet" href="../science-website-css.css/styles.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">S<span>M</span>V</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="navbar" id="navbar">
+    <ul class="nav-list">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+        <li><a href="visit.html" class="nav-link active">Visit</a></li>
+        <li><a href="admission.html" class="nav-link">Admission</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Image -->
+<section class="hero">
+    <img src="../images/smv-visit-banner.jpg" alt="Museum Exterior">
+</section>
+
+<!-- Visit Header -->
+<section class="welcome">
+    <h1>Visit Us!</h1>
+</section>
+
+<!-- Visit Grid -->
+<section class="visit-grid" id="visit">
+    <div class="visit-card map-card">
+        <img src="../images/smv-index-img2.jpg" alt="Museum Map">
+    </div>
+
+    <div class="visit-card location-card">
+        <h2>Location & Hours</h2>
+        <div class="hours-row">
+            <div>
+                <strong>Monday–Friday</strong>
+                <p>10AM–6PM</p>
+            </div>
+            <div>
+                <strong>Saturday–Sunday</strong>
+                <p>10AM–6PM</p>
+            </div>
+        </div>
+        <p class="address">132 Museum Ave, Chestnut City</p>
+    </div>
+</section>
+
+<!-- Exhibits Section -->
+<section class="content exhibits-section" id="exhibits">
+    <div class="text">
+        <h2>Exhibits</h2>
+        <p>
+        We have multiple different exhibits that come and go. Check out what exhibits we have coming up and plan ahead.
+        </p>
+        <button>Exhibits</button>
+    </div>
+
+    <img src="../images/smv-index-img1.jpg" alt="Exhibit">
+</section>
+
+</body>
+</html>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    });
+</script>

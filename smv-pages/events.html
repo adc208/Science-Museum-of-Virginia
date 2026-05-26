@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Museum of Virginia</title>
+<link rel="stylesheet" href="../science-website-css.css/styles.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">S<span>M</span>V</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="navbar" id="navbar">
+    <ul class="nav-list">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+        <li><a href="visit.html" class="nav-link">Visit</a></li>
+        <li><a href="admission.html" class="nav-link">Admission</a></li>
+        <li><a href="events.html" class="nav-link active">Events</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Image -->
+<!-- Hero Image -->
+<section class="hero">
+    <img src="../images/smv-banner.jpg" alt="Events Banner">
+</section>
+
+<!-- Events Header -->
+<section class="welcome">
+    <h1>Events</h1>
+</section>
+
+<!-- Events Grid -->
+<section class="event-grid">
+    <article class="event-card">
+        <img src="../images/smv-index-img1.jpg" alt="Outer Space Exhibit">
+        <h3>Outer Space Exhibit</h3>
+        <p class="date">Nov 21, 2025 - Feb 3, 2026</p>
+    </article>
+    <article class="event-card">
+        <img src="../images/smv-index-img2.jpg" alt="Prehistoric Exhibit">
+        <h3>Prehistoric Exhibit</h3>
+        <p class="date">Nov 30, 2025 - Jan 24, 2026</p>
+    </article>
+    <article class="event-card">
+        <img src="../images/index-banner.jpg" alt="Human Body Exhibit">
+        <h3>Human Body Exhibit</h3>
+        <p class="date">Feb 21, 2026 - May 29, 2026</p>
+    </article>
+    <article class="event-card">
+        <img src="../images/smv-banner.jpg" alt="Water Exhibit">
+        <h3>The Wonders of Water</h3>
+        <p class="date">Feb 10, 2026 - May 29, 2026</p>
+    </article>
+</section>
+
+</body>
+</html>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    });
+</script>

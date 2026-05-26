@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science Museum of Virginia</title>
+<link rel="stylesheet" href="../science-website-css.css/styles.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">S<span>M</span>V</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+</header>
+
+<!-- Navigation Bar -->
+<nav class="navbar" id="navbar">
+    <ul class="nav-list">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="about-us.html" class="nav-link">About Us</a></li>
+        <li><a href="visit.html" class="nav-link">Visit</a></li>
+        <li><a href="admission.html" class="nav-link active">Admission</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Image -->
+<!-- Hero Image -->
+<section class="hero">
+    <img src="../images/smv-visit-banner.jpg" alt="Admissions Banner">
+</section>
+
+<!-- Admission Header -->
+<section class="welcome">
+    <h1>General Admissions</h1>
+</section>
+
+<!-- Admission Layout -->
+<section class="admission-layout">
+    <div class="tickets">
+        <div class="ticket-row">
+            <div>
+                <h3>Senior</h3>
+                <p class="sub">Ages 60+</p>
+            </div>
+            <div class="controls">
+                <button class="qty-btn" data-type="senior" data-op="dec">−</button>
+                <span class="qty" id="qty-senior">0</span>
+                <button class="qty-btn" data-type="senior" data-op="inc">+</button>
+            </div>
+        </div>
+
+        <div class="ticket-row">
+            <div>
+                <h3>Adults</h3>
+                <p class="sub">Ages 13-59</p>
+            </div>
+            <div class="controls">
+                <button class="qty-btn" data-type="adult" data-op="dec">−</button>
+                <span class="qty" id="qty-adult">0</span>
+                <button class="qty-btn" data-type="adult" data-op="inc">+</button>
+            </div>
+        </div>
+
+        <div class="ticket-row">
+            <div>
+                <h3>Youth</h3>
+                <p class="sub">Ages 6-12</p>
+            </div>
+            <div class="controls">
+                <button class="qty-btn" data-type="youth" data-op="dec">−</button>
+                <span class="qty" id="qty-youth">0</span>
+                <button class="qty-btn" data-type="youth" data-op="inc">+</button>
+            </div>
+        </div>
+
+        <div class="ticket-row">
+            <div>
+                <h3>Children</h3>
+                <p class="sub">Ages 5 and below</p>
+            </div>
+            <div class="controls">
+                <button class="qty-btn" data-type="child" data-op="dec">−</button>
+                <span class="qty" id="qty-child">0</span>
+                <button class="qty-btn" data-type="child" data-op="inc">+</button>
+            </div>
+        </div>
+    </div>
+
+    <aside class="cart-box">
+        <h3>Your Cart</h3>
+        <div id="cart-items">
+            <p id="cart-senior">0 × Senior - 10$</p>
+            <p id="cart-adult">0 × Adult - 20$</p>
+            <p id="cart-youth">0 × Youth - 15$</p>
+            <p id="cart-child">0 × Children - 2$</p>
+        </div>
+        <h4 id="cart-total">Total- 0$</h4>
+        <button class="checkout">Checkout</button>
+    </aside>
+</section>
+
+</body>
+</html>
+
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+        });
+    });
+
+    // Admission ticket logic
+    (function(){
+        const prices = { senior:10, adult:20, youth:15, child:2 };
+        const qty = { senior:0, adult:0, youth:0, child:0 };
+
+        function updateCart(){
+            document.getElementById('cart-senior').textContent = `${qty.senior} × Senior - ${prices.senior}$`;
+            document.getElementById('cart-adult').textContent = `${qty.adult} × Adult - ${prices.adult}$`;
+            document.getElementById('cart-youth').textContent = `${qty.youth} × Youth - ${prices.youth}$`;
+            document.getElementById('cart-child').textContent = `${qty.child} × Children - ${prices.child}$`;
+            const total = qty.senior*prices.senior + qty.adult*prices.adult + qty.youth*prices.youth + qty.child*prices.child;
+            document.getElementById('cart-total').textContent = `Total- ${total}$`;
+            document.getElementById('qty-senior').textContent = qty.senior;
+            document.getElementById('qty-adult').textContent = qty.adult;
+            document.getElementById('qty-youth').textContent = qty.youth;
+            document.getElementById('qty-child').textContent = qty.child;
+        }
+
+        document.querySelectorAll('.qty-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const type = btn.dataset.type;
+                const op = btn.dataset.op;
+                if(op === 'inc') qty[type]++;
+                else if(op === 'dec') qty[type] = Math.max(0, qty[type]-1);
+                updateCart();
+            });
+        });
+
+        // initialize
+        updateCart();
+    })();
+</script>
